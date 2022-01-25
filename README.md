@@ -14,16 +14,23 @@ Please feel free to colaborate in this project, and also if you see something wr
 STOCK
 
 ```js
-Stock={
-    item:{
-        expirationDate: Date,
+Stock:[
+    Ingredient:{
         amount: Number,
-    }
-}
+        expirationDate: Date,
+        nutritionalScore:{
+            kCal: Number, 
+            fat: Number, 
+            carbs: Number, 
+            proteins: Number,
+            other: ...UNDERCONSTRUCTION
+            }
+        }
+]
 ```
 
 ```js
-Recipe={
+Recipe:{
     instructions: Array,
     portions: Number,
     preparationTime: Number,
@@ -31,23 +38,20 @@ Recipe={
         kCal: Number, 
         fat: Number, 
         carbs: Number, 
-        proteins: Number},
-    ingredients: [
+        proteins: Number
+        },
+    Ingredients: { mainIngredients: [
         {itemName: String, quantity: Number},
         ...
-    ],
+    ], optioanlIngredients:[
+        {itemName: String, quantity: Number},
+        ...
+    ]},
     variants: String,
     cookWare: [
-        item1, item2]
+        item1, item2
+        ],
+    price: Number,
 }
 ```
 
-```js
-Ingredient={
-    kCal: Number, 
-    fat: Number, 
-    carbs: Number, 
-    proteins: Number,
-    other: ...UNDERCONSTRUCTION
-    }
-```
